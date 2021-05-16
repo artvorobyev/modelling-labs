@@ -1,0 +1,14 @@
+<div class="pb-2">
+  <h1>Лабораторные работы по курсу «Моделирование»</h1>
+  <p>Выполнил: Воробьев Артемий Кириллович, ИУ7-78Б(В)</p>
+</div>
+<ul class="nav nav-pills pb-5">
+  <li *ngFor="let page of pages" class="nav-item">
+    <a
+      class="nav-link"
+      [class.active]="isCurrent(page.path)"
+      [routerLink]="[page.path]"
+      >{{ page.title }}</a
+    >
+  </li>
+</ul>

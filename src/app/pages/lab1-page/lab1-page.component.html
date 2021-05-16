@@ -1,0 +1,143 @@
+<h2 class="mb-4">Исследование последовательности псевдослучайных чисел</h2>
+<div class="mb-5">
+  <h4 class="mb-3">Алгоритмическая генерация</h4>
+  <table
+    *ngIf="algorythmicLengthArray.length > 0"
+    class="table table-striped table-responsive"
+  >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Одноразрядные</th>
+        <th scope="col">Двухразрядные</th>
+        <th scope="col">Трехразрядные</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of algorythmicLengthArray; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ algorythmicData[0][i] }}</td>
+        <td>{{ algorythmicData[1][i] }}</td>
+        <td>{{ algorythmicData[2][i] }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Коэффициент корреляции</th>
+        <td>{{ getCorrelation(algorythmicData[0]) }}</td>
+        <td>{{ getCorrelation(algorythmicData[1]) }}</td>
+        <td>{{ getCorrelation(algorythmicData[2]) }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <form (submit)="submitAlgorythmicData($event)" class="row">
+    <div class="col-lg-4">
+      <div class="form-floating">
+        <input
+          class="form-control"
+          type="number"
+          name="algorithmicLength"
+          value="10"
+          [(ngModel)]="algorythmicLength"
+        />
+        <label for="algorithmicLength">Длина последовательности</label>
+      </div>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary" [disabled]="!algorythmicLength">
+        Сгенерировать
+      </button>
+    </div>
+  </form>
+</div>
+<div class="mb-5">
+  <h4 class="mb-3">Табличные данные</h4>
+  <table
+    *ngIf="tableLengthArray.length > 0"
+    class="table table-striped table-responsive"
+  >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Одноразрядные</th>
+        <th scope="col">Двухразрядные</th>
+        <th scope="col">Трехразрядные</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of tableLengthArray; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ tableData[0][i] }}</td>
+        <td>{{ tableData[1][i] }}</td>
+        <td>{{ tableData[2][i] }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Коэффициент корреляции</th>
+        <td>{{ getCorrelation(tableData[0]) }}</td>
+        <td>{{ getCorrelation(tableData[1]) }}</td>
+        <td>{{ getCorrelation(tableData[2]) }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <form (submit)="submitTableData($event)" class="row">
+    <div class="col-lg-4">
+      <div class="form-floating">
+        <input
+          class="form-control"
+          type="number"
+          name="tableLength"
+          value="10"
+          [(ngModel)]="tableLength"
+        />
+        <label for="tableLength">Длина последовательности</label>
+      </div>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary" [disabled]="!tableLength">
+        Заполнить
+      </button>
+    </div>
+  </form>
+</div>
+
+<div class="mb-5">
+  <h4 class="mb-3">Пользовательский ввод</h4>
+  <table
+    *ngIf="userData.length > 0"
+    class="table table-striped table-responsive"
+  >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Число</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of userData; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ userData[i] }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Коэффициент корреляции</th>
+        <td>{{ getCorrelation(userData) }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <form (submit)="submitUserData($event)" class="row">
+    <div class="col-lg-4">
+      <div class="form-floating">
+        <input
+          class="form-control"
+          type="text"
+          name="userLength"
+          value="10"
+          [(ngModel)]="userString"
+        />
+        <label for="userLength">Введите последовательность</label>
+      </div>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary" [disabled]="!isUserFieldValid()">
+        Проанализировать
+      </button>
+    </div>
+  </form>
+</div>
