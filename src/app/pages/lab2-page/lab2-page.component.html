@@ -1,1 +1,152 @@
-<p>lab2-page works!</p>
+<h2 class="mb-4">Исследование случайных величин</h2>
+<div class="mb-5">
+  <h4 class="mb-3">Равномерное распределение</h4>
+  <form (submit)="submitUniformData($event)" class="row">
+    <div class="col-lg-2">
+      <div class="form-floating">
+        <input
+          class="form-control"
+          type="number"
+          name="uniformA"
+          value="0"
+          [(ngModel)]="uniformA"
+        />
+        <label for="uniformA">a</label>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="form-floating">
+        <input
+          class="form-control"
+          type="number"
+          name="uniformB"
+          value="0"
+          [(ngModel)]="uniformB"
+        />
+        <label for="uniformB">b</label>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="form-floating">
+        <input
+          class="form-control"
+          type="number"
+          name="uniformStart"
+          value="0"
+          [(ngModel)]="uniformStart"
+        />
+        <label for="uniformStart">start</label>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="form-floating">
+        <input
+          class="form-control"
+          type="number"
+          name="uniformEnd"
+          value="0"
+          [(ngModel)]="uniformEnd"
+        />
+        <label for="uniformEnd">end</label>
+      </div>
+    </div>
+    <div class="col-auto">
+      <button
+        class="btn btn-primary"
+        [disabled]="!(uniformA && uniformB && uniformStart && uniformEnd)"
+      >
+        Построить график
+      </button>
+    </div>
+  </form>
+  <div *ngIf="showUniformCharts" class="row">
+    <div class="col-md-6">
+      <google-chart
+        [type]="ChartType.LineChart"
+        [data]="uniformDensity"
+        [columns]="['X', 'Плотность распределения']"
+        [options]="chartOptions"
+      >
+      </google-chart>
+    </div>
+    <div class="col-md-6">
+      <google-chart
+        [type]="ChartType.LineChart"
+        [data]="uniformFunc"
+        [columns]="['X', 'Функция распределения']"
+        [options]="chartOptions"
+      >
+      </google-chart>
+    </div>
+  </div>
+</div>
+
+<div class="mb-5">
+  <h4 class="mb-3">Распределение Пуассона</h4>
+  <form (submit)="submitPoissonData($event)" class="row">
+    <div class="col-lg-2">
+      <div class="form-floating">
+        <input
+          class="form-control"
+          type="number"
+          name="poissonLambda"
+          value="0"
+          [(ngModel)]="poissonLambda"
+        />
+        <label for="poissonLambda">lambda</label>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="form-floating">
+        <input
+          class="form-control"
+          type="number"
+          name="poissonStart"
+          value="0"
+          [(ngModel)]="poissonStart"
+        />
+        <label for="poissonStart">start</label>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="form-floating">
+        <input
+          class="form-control"
+          type="number"
+          name="poissonEnd"
+          value="0"
+          [(ngModel)]="poissonEnd"
+        />
+        <label for="poissonEnd">end</label>
+      </div>
+    </div>
+    <div class="col-auto">
+      <button
+        class="btn btn-primary"
+        [disabled]="!(poissonLambda && poissonStart && poissonEnd)"
+      >
+        Построить график
+      </button>
+    </div>
+  </form>
+  <div *ngIf="showPoissonCharts" class="row">
+    <div class="col-md-6">
+      <google-chart
+        [type]="ChartType.LineChart"
+        [data]="poissonDensity"
+        [columns]="['X', 'Плотность распределения']"
+        [options]="chartOptions"
+      >
+      </google-chart>
+    </div>
+    <div class="col-md-6">
+      <google-chart
+        [type]="ChartType.LineChart"
+        [data]="poissonFunc"
+        [columns]="['X', 'Функция распределения']"
+        [options]="chartOptions"
+      >
+      </google-chart>
+    </div>
+  </div>
+</div>

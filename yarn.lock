@@ -1183,6 +1183,11 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/google.visualization@0.0.58":
+  version "0.0.58"
+  resolved "https://registry.yarnpkg.com/@types/google.visualization/-/google.visualization-0.0.58.tgz#eb2aa3cf05d63a9b42ff5cfcab1fc0594fb45a0e"
+  integrity sha512-ldwrhRvqSlrCYjHELGZNNMP8m5oPLBb6iU7CfKF2C/YpgRTlHihqsrL5M293u0GL7mKfjm0AjSIgEE2LU8fuTw==
+
 "@types/jasmine@~3.6.0":
   version "3.6.11"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.6.11.tgz#4b1d77aa9dfc757407cb9e277216d8e83553f09d"
@@ -1494,6 +1499,14 @@ alphanum-sort@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
+
+angular-google-charts@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/angular-google-charts/-/angular-google-charts-2.2.2.tgz#fd26a78a0c44f8bc686832116e7ced9751b46987"
+  integrity sha512-dbNDqhSfqxv1rMMph2xV55+nsXSREClm03bTRpq4nRjpVghC1hVwsqfeg6p/cngB7WgamQmWj5ExTwN6vBzVAg==
+  dependencies:
+    "@types/google.visualization" "0.0.58"
+    tslib "^2.2.0"
 
 ansi-colors@4.1.1:
   version "4.1.1"
@@ -8347,6 +8360,11 @@ tslib@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
   integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
+
+tslib@^2.2.0:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
+  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
 tslint@~6.1.0:
   version "6.1.3"

@@ -11,6 +11,10 @@ export class HeaderComponent {
       title: 'Лабораторная работа №1',
       path: 'lab1',
     },
+    {
+      title: 'Лабораторная работа №2',
+      path: 'lab2',
+    },
   ];
 
   isCurrent(path: string): boolean {

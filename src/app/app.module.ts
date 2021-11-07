@@ -8,6 +8,7 @@ import { Lab2PageComponent } from './pages/lab2-page/lab2-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,13 @@ import { FormsModule } from '@angular/forms';
     Lab2PageComponent,
     HeaderComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, CommonModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CommonModule,
+    FormsModule,
+    GoogleChartsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
