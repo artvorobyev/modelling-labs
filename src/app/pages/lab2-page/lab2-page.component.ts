@@ -128,10 +128,11 @@ export class Lab2PageComponent implements OnInit {
   }
 
   factorial(n: number, result: number): number {
+    result = result || 1;
     if (n <= 0) {
       return result;
     } else {
-      return this.factorial(n - 1, (result ? result : 1) * n);
+      return this.factorial(n - 1, result * n);
     }
   }
 }
