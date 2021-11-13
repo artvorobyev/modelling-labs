@@ -1,0 +1,185 @@
+<h2 class="mb-4">Многоканальная СМО</h2>
+<form (submit)="submitData($event)">
+  <div class="mb-5">
+    <h4 class="mb-3">Клиенты</h4>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            type="number"
+            name="requestsCount"
+            value="0"
+            [(ngModel)]="requestsCount"
+          />
+          <label for="requestsCount">Количество запросов</label>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            type="number"
+            name="requestsPeriod"
+            value="0"
+            [(ngModel)]="requestsPeriod"
+          />
+          <label for="requestsPeriod">Интервал (мин.)</label>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-floating">
+          <input
+            class="form-control"
+            type="number"
+            name="requestsGap"
+            value="0"
+            [(ngModel)]="requestsPeriodGap"
+          />
+          <label for="requestsGap">+- (мин.)</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-5">
+    <h4 class="mb-3">Операторы</h4>
+    <div class="row">
+      <div class="col-lg-4">
+        <p><strong>Оператор 1</strong></p>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-floating">
+              <input
+                class="form-control"
+                type="number"
+                name="operator1Period"
+                value="0"
+                [(ngModel)]="operator1Period"
+              />
+              <label for="operator1Period">Интервал (мин.)</label>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-floating">
+              <input
+                class="form-control"
+                type="number"
+                name="operator1Gap"
+                value="0"
+                [(ngModel)]="operator1PeriodGap"
+              />
+              <label for="operator1Gap">+- (мин.)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <p><strong>Оператор 2</strong></p>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-floating">
+              <input
+                class="form-control"
+                type="number"
+                name="operator2Period"
+                value="0"
+                [(ngModel)]="operator2Period"
+              />
+              <label for="operator2Period">Интервал (мин.)</label>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-floating">
+              <input
+                class="form-control"
+                type="number"
+                name="operator2Gap"
+                value="0"
+                [(ngModel)]="operator2PeriodGap"
+              />
+              <label for="operator2Gap">+- (мин.)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <p><strong>Оператор 3</strong></p>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-floating">
+              <input
+                class="form-control"
+                type="number"
+                name="operator3Period"
+                value="0"
+                [(ngModel)]="operator3Period"
+              />
+              <label for="operator3Period">Интервал (мин.)</label>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-floating">
+              <input
+                class="form-control"
+                type="number"
+                name="operator3Gap"
+                value="0"
+                [(ngModel)]="operator3PeriodGap"
+              />
+              <label for="operator3Gap">+- (мин.)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-5">
+    <h4 class="mb-3">Компьютеры</h4>
+    <div class="row">
+      <div class="col-lg-4">
+        <p><strong>Компьютер 1</strong></p>
+        <div class="form-floating">
+          <input
+            class="form-control"
+            type="number"
+            name="computer1Period"
+            value="0"
+            [(ngModel)]="computer1Period"
+          />
+          <label for="computer1Period">Интервал (мин.)</label>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <p><strong>Компьютер 2</strong></p>
+        <div class="form-floating">
+          <input
+            class="form-control"
+            type="number"
+            name="computer2Period"
+            value="0"
+            [(ngModel)]="computer2Period"
+          />
+          <label for="computer2Period">Интервал (мин.)</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showResults" class="mb-3">
+    <h4 class="mb-3">Результаты</h4>
+    <div class="row">
+      <div class="col-lg-4">
+        <p>Вероятность отказа:</p>
+        <p>
+          <strong>{{ failProbability | number: "1.0-4" }}</strong>
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <p>Количество необработанных заявок:</p>
+        <p>
+          <strong>{{ fails }}</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary btn-lg">Построить модель</button>
+</form>

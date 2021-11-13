@@ -9,12 +9,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { Lab5PageComponent } from './pages/lab5-page/lab5-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     Lab1PageComponent,
     Lab2PageComponent,
+    Lab5PageComponent,
     HeaderComponent,
   ],
   imports: [
